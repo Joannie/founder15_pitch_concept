@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Founder 15 / 初創所</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,800;1,400;1,800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream:   #FAFAF5;
+  --white:   #FFFFFF;
+  --navy:    #0F2044;
+  --yellow:  #FFE234;
+  --coral:   #FF5C3A;
+  --green:   #1DB87A;
+  --purple:  #7B5CF6;
+  --ink:     #1A1A2E;
+  --muted:   #6B7280;
+  --border:  #E5E5E0;
+  --slide-w: 1100px;
+  --slide-h: 618px;
+  --radius:  16px;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: #F0EFE8;
+  font-family: 'Noto Sans TC', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px 80px;
+  gap: 28px;
+  min-height: 100vh;
+}
+
+/* NAV */
+.nav {
+  position: fixed;
+  top: 18px;
+  right: 22px;
+  display: flex;
+  gap: 8px;
+  z-index: 100;
+}
+.nav button {
+  background: var(--navy);
+  border: none;
+  color: var(--yellow);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 99px;
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  transition: all 0.18s;
+}
+.nav button:hover { background: var(--coral); color: #fff; transform: translateY(-1px); }
+
+.slide-counter {
+  position: fixed;
+  top: 22px;
+  left: 22px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--navy);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  z-index: 100;
+  background: var(--yellow);
+  padding: 5px 12px;
+  border-radius: 99px;
+}
+
+/* SLIDE BASE */
+.slide {
+  width: var(--slide-w);
+  height: var(--slide-h);
+  background: var(--white);
+  border-radius: var(--radius);
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.04), 0 20px 60px rgba(0,0,0,0.10);
+}
+
+/* ── SLIDE 1: COVER ── */
+.s1 {
+  background: var(--navy);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+.s1-left {
+  padding: 56px 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+.s1-right {
+  background: var(--yellow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 52px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.s1-right::before {
+  content: '15';
+  position: absolute;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 320px;
+  font-weight: 800;
+  color: rgba(15,32,68,0.08);
+  right: -40px;
+  bottom: -60px;
+  line-height: 1;
+  pointer-events: none;
+}
+.s1 .eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--yellow);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.s1 .brand-en {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 68px;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+.s1 .brand-en span { color: var(--yellow); }
+.s1 .brand-zh {
+  font-size: 20px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.3em;
+  margin-top: 14px;
+}
+.s1 .tagline {
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+  margin-top: 28px;
+  font-weight: 300;
+  max-width: 320px;
+}
+.s1-bottom { display: flex; flex-direction: column; gap: 4px; }
+.s1-bottom .name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+}
+.s1-bottom .role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.12em;
+}
+.s1-right .slogan {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.35;
+  position: relative;
+  z-index: 1;
+}
+.s1-right .slogan-en {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(15,32,68,0.6);
+  margin-top: 14px;
+  position: relative;
+  z-index: 1;
+  line-height: 1.5;
+  max-width: 280px;
+}
+.s1-right .pill {
+  margin-top: 28px;
+  display: inline-block;
+  background: var(--navy);
+  color: var(--yellow);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 99px;
+  letter-spacing: 0.1em;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── SLIDE 2: PROBLEM ── */
+.s2 { background: var(--cream); display: grid; grid-template-columns: 1fr 1fr; }
+.s2 .left {
+  background: var(--coral);
+  padding: 56px 48px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.s2 .right { padding: 48px 48px; display: flex; flex-direction: column; justify-content: center; gap: 16px; }
+.slide-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.s2 .left .slide-label { color: rgba(255,255,255,0.7); }
+.s2 .big-stat {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 100px;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1;
+}
+.s2 .stat-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,0.75);
+  margin-top: 8px;
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 260px;
+}
+.slide-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.25;
+}
+.problem-card {
+  border-left: 3px solid var(--coral);
+  padding: 12px 16px;
+  background: rgba(255,92,58,0.06);
+  border-radius: 0 8px 8px 0;
+}
+.problem-card .pc-title { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.problem-card .pc-desc { font-size: 12px; color: var(--muted); line-height: 1.6; font-weight: 300; }
+
+/* ── SLIDE 3: INSIGHT ── */
+.s3 { padding: 60px 72px; display: flex; flex-direction: column; justify-content: center; background: var(--white); }
+.s3 .slide-label { color: var(--purple); }
+.s3 .quote-box {
+  background: var(--yellow);
+  border-radius: 12px;
+  padding: 28px 32px;
+  margin: 20px 0;
+  position: relative;
+}
+.s3 .quote-box::before {
+  content: '"';
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 80px;
+  color: rgba(15,32,68,0.12);
+  position: absolute;
+  top: 4px; left: 20px;
+  line-height: 1;
+}
+.s3 .quote-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.4;
+}
+.s3 .three-cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 8px; }
+.insight-col { border-top: 3px solid var(--border); padding-top: 14px; }
+.insight-col.c1 { border-color: var(--coral); }
+.insight-col.c2 { border-color: var(--green); }
+.insight-col.c3 { border-color: var(--purple); }
+.insight-col .ic-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.c1 .ic-num { color: var(--coral); }
+.c2 .ic-num { color: var(--green); }
+.c3 .ic-num { color: var(--purple); }
+.insight-col .ic-title { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+.insight-col .ic-desc { font-size: 12px; color: var(--muted); line-height: 1.6; font-weight: 300; }
+
+/* ── SLIDE 4: SOLUTION ── */
+.s4 { display: grid; grid-template-columns: 5fr 7fr; }
+.s4 .left {
+  background: var(--green);
+  padding: 52px 44px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.s4 .left .slide-label { color: rgba(255,255,255,0.65); }
+.s4 .sol-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+  margin: 12px 0;
+}
+.s4 .sol-sub { font-size: 12.5px; color: rgba(255,255,255,0.75); line-height: 1.7; font-weight: 300; }
+.s4 .right { padding: 44px 48px; display: flex; flex-direction: column; justify-content: center; gap: 2px; background: var(--white); }
+.s4 .right .slide-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 20px; font-weight: 800; color: var(--navy); margin-bottom: 16px; }
+.layer {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.layer:last-child { border-bottom: none; }
+.layer-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  min-width: 32px;
+  text-align: center;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.lb1 { background: rgba(29,184,122,0.15); color: var(--green); }
+.lb2 { background: rgba(255,226,52,0.4); color: #8a6e00; }
+.lb3 { background: rgba(123,92,246,0.15); color: var(--purple); }
+.layer-body .lt { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+.layer-body .ld { font-size: 12px; color: var(--muted); line-height: 1.6; font-weight: 300; }
+
+/* ── SLIDE 5: MARKET ── */
+.s5 { padding: 48px 60px; background: var(--cream); display: flex; flex-direction: column; justify-content: center; }
+.s5 .slide-label { color: var(--navy); }
+.s5 .slide-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 26px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+.s5 .subtitle { font-size: 12px; color: var(--muted); margin-bottom: 24px; font-weight: 300; }
+.comp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.comp-card {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 18px 16px;
+  border: 1.5px solid var(--border);
+  transition: transform 0.15s;
+}
+.comp-card.ours {
+  border-color: var(--green);
+  background: rgba(29,184,122,0.05);
+}
+.comp-card .cc-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.comp-card.ours .cc-tag { color: var(--green); font-weight: 700; }
+.comp-card .cc-name { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 10px; line-height: 1.3; }
+.comp-card .cc-row { font-size: 11px; color: var(--muted); padding: 5px 0; border-top: 1px solid var(--border); line-height: 1.5; }
+.comp-card .cc-row strong { color: var(--navy); font-weight: 600; }
+.comp-card .cc-row.hi { color: var(--green); font-weight: 600; border-color: rgba(29,184,122,0.2); }
+
+/* ── SLIDE 6: WHY NOW / WHY US ── */
+.s6 { display: grid; grid-template-columns: 1fr 1fr; background: var(--white); }
+.s6 .left {
+  padding: 52px 48px;
+  border-right: 1px solid var(--border);
+  display: flex; flex-direction: column; justify-content: center; gap: 14px;
+}
+.s6 .right {
+  padding: 52px 48px;
+  display: flex; flex-direction: column; justify-content: center; gap: 14px;
+  background: rgba(250,250,245,0.6);
+}
+.s6 .slide-label { color: var(--navy); }
+.s6 .section-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 22px; font-weight: 800; color: var(--navy); line-height: 1.25; margin-bottom: 4px;
+}
+.why-row { display: flex; gap: 12px; align-items: flex-start; }
+.why-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--yellow); border: 2px solid var(--navy);
+  margin-top: 5px; flex-shrink: 0;
+}
+.why-text { font-size: 12.5px; color: var(--muted); line-height: 1.6; font-weight: 300; }
+.why-text strong { color: var(--navy); font-weight: 700; }
+.tag-cloud { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+.tag {
+  font-size: 11px; padding: 4px 10px; border-radius: 99px;
+  background: var(--cream); color: var(--navy);
+  border: 1px solid var(--border); font-weight: 500;
+}
+.tag.hi { background: var(--yellow); border-color: transparent; font-weight: 700; }
+.founder-name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 17px; font-weight: 800; color: var(--navy); margin-bottom: 10px;
+}
+
+/* ── SLIDE 7: ROADMAP ── */
+.s7 { padding: 52px 64px; display: flex; flex-direction: column; justify-content: center; background: var(--white); }
+.s7 .slide-label { color: var(--navy); }
+.s7 .slide-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 26px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+.s7 .subtitle { font-size: 12px; color: var(--muted); font-weight: 300; margin-bottom: 28px; }
+.roadmap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.phase-card {
+  border-radius: 10px;
+  padding: 18px 16px;
+  position: relative;
+  overflow: hidden;
+}
+.phase-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  border-radius: 10px 10px 0 0;
+}
+.ph0 { background: rgba(107,114,128,0.07); }
+.ph0::after { background: var(--muted); }
+.ph1 { background: rgba(255,226,52,0.12); }
+.ph1::after { background: var(--yellow); }
+.ph2 { background: rgba(29,184,122,0.08); }
+.ph2::after { background: var(--green); }
+.ph3 { background: rgba(123,92,246,0.08); }
+.ph3::after { background: var(--purple); }
+.phase-period {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px; letter-spacing: 0.12em; margin-bottom: 8px; font-weight: 600;
+}
+.ph0 .phase-period { color: var(--muted); }
+.ph1 .phase-period { color: #8a6e00; }
+.ph2 .phase-period { color: var(--green); }
+.ph3 .phase-period { color: var(--purple); }
+.phase-title { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 10px; line-height: 1.35; }
+.phase-items { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+.phase-items li { font-size: 11px; color: var(--muted); line-height: 1.5; font-weight: 300; padding-left: 12px; position: relative; }
+.phase-items li::before { content: '›'; position: absolute; left: 0; color: var(--navy); font-weight: 700; }
+
+/* ── SLIDE 8: ASK ── */
+.s8 { background: var(--navy); display: grid; grid-template-columns: 1fr 1fr; }
+.s8 .left { padding: 60px 52px; display: flex; flex-direction: column; justify-content: center; }
+.s8 .slide-label { color: var(--yellow); }
+.s8 .ask-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 42px; font-weight: 800; color: var(--white);
+  line-height: 1.1; margin: 16px 0 20px;
+}
+.s8 .ask-title em { color: var(--yellow); font-style: italic; }
+.s8 .ask-desc { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.75; font-weight: 300; max-width: 340px; }
+.s8 .right { padding: 56px 48px; display: flex; flex-direction: column; justify-content: center; gap: 16px; border-left: 1px solid rgba(255,255,255,0.08); }
+.ask-block {
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  padding: 18px 20px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.ask-block .ab-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--yellow); letter-spacing: 0.18em; margin-bottom: 6px; }
+.ask-block .ab-value {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 26px; font-weight: 800; color: var(--white); margin-bottom: 4px;
+}
+.ask-block .ab-desc { font-size: 11.5px; color: rgba(255,255,255,0.4); line-height: 1.55; font-weight: 300; }
+.contact-block {
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.c-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: rgba(255,255,255,0.3); letter-spacing: 0.15em; margin-bottom: 8px; }
+.c-info { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.75; font-weight: 300; }
+.c-info strong { color: var(--white); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="slide-counter" id="counter">01 / 08</div>
+<div class="nav">
+  <button onclick="scrollSlide(-1)">← 上一頁</button>
+  <button onclick="scrollSlide(1)">下一頁 →</button>
+</div>
+
+<!-- ── SLIDE 1: COVER ── -->
+<div class="slide s1" id="slide-1">
+  <div class="s1-left">
+    <div>
+      <div class="eyebrow">SEED STAGE · YOUTH VENTURES · TAIWAN</div>
+      <div class="brand-en">Founder<span>15</span></div>
+      <div class="brand-zh">初 創 所</div>
+      <div class="tagline">第一個專為 15–20 歲創業者設計的超早期種子生態系——社群先於資金，連結先於投資。</div>
+    </div>
+    <div class="s1-bottom">
+      <div class="name">Chung-Ying (Joannie) Huang 黃鐘瑩</div>
+      <div class="role">FOUNDER · FULBRIGHT DAI ALUMNA · EDTECH RESEARCHER · NTUST 研究所</div>
+    </div>
+  </div>
+  <div class="s1-right">
+    <div class="slogan">讓最有創造力、<br>最不怕失敗的年紀，<br>真正動手做一次。</div>
+    <div class="slogan-en">The age most willing to fail deserves a real stage.</div>
+    <div class="pill">2026 · TAIWAN PILOT</div>
+  </div>
+</div>
+
+<!-- ── SLIDE 2: PROBLEM ── -->
+<div class="slide s2" id="slide-2">
+  <div class="left">
+    <div class="slide-label">PROBLEM</div>
+    <div class="big-stat">80%</div>
+    <div class="stat-sub">台灣國高中生在考試體制下基礎能力達標，卻在最有創造力的四年被系統性消耗。</div>
+  </div>
+  <div class="right">
+    <div class="slide-title">這個空缺，<br>沒有人在填補</div>
+    <div class="problem-card">
+      <div class="pc-title">升學體制消耗創造力的黃金期</div>
+      <div class="pc-desc">15–18 歲是認知彈性最高、風險承受度最強的階段，卻幾乎全部用來備考。</div>
+    </div>
+    <div class="problem-card">
+      <div class="pc-title">現有創業支援從大學才開始</div>
+      <div class="pc-desc">AppWorks、Dorm Room Fund——所有主流機制的起點都是大學入學後，晚了 3–4 年。</div>
+    </div>
+    <div class="problem-card">
+      <div class="pc-title">缺乏基礎設施，不是缺乏潛力</div>
+      <div class="pc-desc">問題不是青少年沒有想法，而是沒有社群、沒有導師、沒有任何「第一步」的基礎設施。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SLIDE 3: INSIGHT ── -->
+<div class="slide s3" id="slide-3">
+  <div class="slide-label" style="color:var(--purple)">CORE INSIGHT</div>
+  <div class="quote-box">
+    <div class="quote-text">最好的創業者，不是等準備好了才開始——<br>他們是在開始的過程中，變得準備好的。</div>
+  </div>
+  <div class="three-cols">
+    <div class="insight-col c1">
+      <div class="ic-num">01 — 社群改變參照系</div>
+      <div class="ic-title">讓學生看見「有人在做這件事」</div>
+      <div class="ic-desc">本身就是改變他們自我認知的第一步。社群先於資金，連結先於課程。</div>
+    </div>
+    <div class="insight-col c2">
+      <div class="ic-num">02 — 實作先於理論</div>
+      <div class="ic-title">創業就是最真實的 PBL</div>
+      <div class="ic-desc">AI 時代需要的不是更多知識，而是有勇氣把想法變成第一個行動的能力。</div>
+    </div>
+    <div class="insight-col c3">
+      <div class="ic-num">03 — 早認識是資訊優勢</div>
+      <div class="ic-title">從 15 歲認識的 founder</div>
+      <div class="ic-desc">是任何大學階段 VC 都無法複製的投資資訊優勢。先行者的護城河從這裡開始。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SLIDE 4: SOLUTION ── -->
+<div class="slide s4" id="slide-4">
+  <div class="left">
+    <div class="slide-label">SOLUTION</div>
+    <div class="sol-title">三層<br>生態系</div>
+    <div class="sol-sub">不是把 VC 模型套用到青少年，而是從頭設計一個他們真正需要的基礎設施。</div>
+  </div>
+  <div class="right">
+    <div class="slide-title">Founder 15 / 初創所 的架構</div>
+    <div class="layer">
+      <div class="layer-badge lb1">L1</div>
+      <div class="layer-body">
+        <div class="lt">社群與連結層（Community First）</div>
+        <div class="ld">以實體＋線上混合社群為核心，建立同儕網絡、導師配對、跨校創業社群。讓人先認識人，想法才有土壤。聯動 g0v、SITCON、社企流等現有生態。</div>
+      </div>
+    </div>
+    <div class="layer">
+      <div class="layer-badge lb2">L2</div>
+      <div class="layer-body">
+        <div class="lt">培育與驗證層（Build & Validate）</div>
+        <div class="ld">10 週創業工具包課程，涵蓋問題定義、使用者訪談、MVP 設計、pitch 演練。每 4 個月一次 Demo Day。提供 Stipend 活動補助（非股權，讓學生專心做事）。</div>
+      </div>
+    </div>
+    <div class="layer">
+      <div class="layer-badge lb3">L3</div>
+      <div class="layer-body">
+        <div class="lt">資本接軌層（Capital Bridge，18 歲後）</div>
+        <div class="ld">18 歲以上、具法律行為能力才進入 grant / equity 階段。Founder 15 是最了解這批創辦人的早期投資人，資訊優勢無可複製。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SLIDE 5: MARKET GAP ── -->
+<div class="slide s5" id="slide-5">
+  <div class="slide-label" style="color:var(--navy);margin-bottom:8px">MARKET LANDSCAPE</div>
+  <div class="slide-title">全球現有機制的空缺</div>
+  <div class="subtitle">沒有一個現有模型，同時具備：亞洲脈絡 × 高中年段 × 社群基礎 × 不需退學 × 真實資本接軌</div>
+  <div class="comp-grid">
+    <div class="comp-card">
+      <div class="cc-tag">美國</div>
+      <div class="cc-name">Thiel Fellowship</div>
+      <div class="cc-row"><strong>年齡</strong> 22 歲以下</div>
+      <div class="cc-row"><strong>資金</strong> US$250K Grant</div>
+      <div class="cc-row"><strong>條件</strong> 必須退學</div>
+      <div class="cc-row" style="color:var(--coral);font-weight:600">✗ 台灣文化完全不適用</div>
+    </div>
+    <div class="comp-card">
+      <div class="cc-tag">美國</div>
+      <div class="cc-name">Z Fellows /<br>Dorm Room Fund</div>
+      <div class="cc-row"><strong>年齡</strong> 大學生為主</div>
+      <div class="cc-row"><strong>資金</strong> $10–20K</div>
+      <div class="cc-row"><strong>條件</strong> 不需退學</div>
+      <div class="cc-row" style="color:var(--coral);font-weight:600">✗ 大學才開始，太晚了</div>
+    </div>
+    <div class="comp-card">
+      <div class="cc-tag">台灣</div>
+      <div class="cc-name">SparkLabs /<br>AppWorks</div>
+      <div class="cc-row"><strong>年齡</strong> 成人 startup</div>
+      <div class="cc-row"><strong>資金</strong> Seed equity</div>
+      <div class="cc-row"><strong>條件</strong> 需有產品/團隊</div>
+      <div class="cc-row" style="color:var(--coral);font-weight:600">✗ 門檻對高中生過高</div>
+    </div>
+    <div class="comp-card ours">
+      <div class="cc-tag">← 我們在這裡</div>
+      <div class="cc-name">Founder 15<br>初創所</div>
+      <div class="cc-row"><strong>年齡</strong> 15–20 歲</div>
+      <div class="cc-row"><strong>資金</strong> Stipend → Grant</div>
+      <div class="cc-row"><strong>條件</strong> 不需退學</div>
+      <div class="cc-row hi">✓ 亞洲首個高中階段<br>創業生態系</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SLIDE 6: WHY NOW / WHY US ── -->
+<div class="slide s6" id="slide-6">
+  <div class="left">
+    <div class="slide-label">WHY NOW</div>
+    <div class="section-title">這個時間點，<br>為什麼是現在？</div>
+    <div class="why-row">
+      <div class="why-dot"></div>
+      <div class="why-text"><strong>實驗教育三法</strong>打開法律空間，讓高中生在學制旁邊建立創業實踐成為可能。</div>
+    </div>
+    <div class="why-row">
+      <div class="why-dot"></div>
+      <div class="why-text"><strong>AI 工具大幅降低門檻</strong>——15 歲的學生今天用 AI 能完成十年前需要工程團隊的原型。</div>
+    </div>
+    <div class="why-row">
+      <div class="why-dot"></div>
+      <div class="why-text"><strong>全球 VC 開始押注青少年</strong>——A* Capital 已將近 20% 資金投注在青少年創辦人，市場訊號明確。</div>
+    </div>
+    <div class="why-row">
+      <div class="why-dot"></div>
+      <div class="why-text"><strong>台灣這個賽道完全空白</strong>——先行者的網絡效應一旦建立，難以複製。</div>
+    </div>
+  </div>
+  <div class="right">
+    <div class="slide-label">WHY US</div>
+    <div class="section-title">為什麼是<br>Joannie Huang？</div>
+    <div class="founder-name">Chung-Ying (Joannie) Huang</div>
+    <div class="tag-cloud">
+      <span class="tag hi">Fulbright DAI 2025</span>
+      <span class="tag">U. of Rochester</span>
+      <span class="tag hi">青山國中小 資訊組長 2026–27</span>
+      <span class="tag">NTUST 研究所（2027 畢）</span>
+      <span class="tag">教育學程完訓</span>
+      <span class="tag">實驗教育工作者第五屆</span>
+      <span class="tag">PyLadies Taiwan</span>
+      <span class="tag hi">Startup Classroom 論文</span>
+    </div>
+    <div class="why-row">
+      <div class="why-dot"></div>
+      <div class="why-text"><strong>商業 × 政策 × 學術</strong>同時交織——2026–27 年在青山國中小擔任資訊組長，接受局端政策、帶國中資訊課、完成論文研究，三條線同步進行。</div>
+    </div>
+    <div class="why-row">
+      <div class="why-dot"></div>
+      <div class="why-text"><strong>2027 年後</strong>具備完整的理論依據、研究數據、學校現場經驗，是台灣最有資格建立這個生態系的人。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SLIDE 7: ROADMAP ── -->
+<div class="slide s7" id="slide-7">
+  <div class="slide-label" style="color:var(--navy)">ROADMAP</div>
+  <div class="slide-title">四階段建構路徑</div>
+  <div class="subtitle">從教室田野出發，社群驗證，到培育機制，到資本接軌——不跳過任何一步。</div>
+  <div class="roadmap">
+    <div class="phase-card ph0">
+      <div class="phase-period" >PHASE 0 · 2026.05–08</div>
+      <div class="phase-title">準備與蓄力<br>Get Ready</div>
+      <ul class="phase-items">
+        <li>加入 g0v、SITCON 社群</li>
+        <li>設計創業思維觀察工具</li>
+        <li>個人品牌建立 / 網站上線</li>
+        <li>認識 5 位潛在導師</li>
+      </ul>
+    </div>
+    <div class="phase-card ph1">
+      <div class="phase-period">PHASE 1 · 2026.09–2027.07</div>
+      <div class="phase-title">田野與社群核<br>青山國中小期間</div>
+      <ul class="phase-items">
+        <li>6–8 班資訊課田野觀察</li>
+        <li>識別「眼神不一樣」的學生</li>
+        <li>寒假第一次非正式聚會</li>
+        <li>每月社群聚會，建立 Discord</li>
+        <li>完成論文研究 + 教育學程</li>
+      </ul>
+    </div>
+    <div class="phase-card ph2">
+      <div class="phase-period">PHASE 2 · 2027.07–2028.12</div>
+      <div class="phase-title">社群驗證與<br>培育機制建立</div>
+      <ul class="phase-items">
+        <li>第一場公開 Demo Day（50人+）</li>
+        <li>推出 10 週課程工具包</li>
+        <li>第一個正式 Cohort（10–15 組）</li>
+        <li>申請政府補助 + 企業 CSR</li>
+        <li>社企流 / g0v 媒體曝光</li>
+      </ul>
+    </div>
+    <div class="phase-card ph3">
+      <div class="phase-period">PHASE 3 · 2029+</div>
+      <div class="phase-title">規模化與<br>資本接軌</div>
+      <ul class="phase-items">
+        <li>社群 200+ 成員</li>
+        <li>設立正式種子基金</li>
+        <li>東南亞合作夥伴接觸</li>
+        <li>實體孵化空間可行性評估</li>
+        <li>Alumni 成功案例對外發表</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ── SLIDE 8: ASK ── -->
+<div class="slide s8" id="slide-8">
+  <div class="left">
+    <div class="slide-label">THE ASK</div>
+    <div class="ask-title">我們需要的<br>不只是<em>錢</em></div>
+    <div class="ask-desc">
+      Founder 15 / 初創所 尋找的是有遠見的 LP 與戰略夥伴——願意在市場形成之前，與我們一起定義這個市場的人。
+    </div>
+  </div>
+  <div class="right">
+    <div class="ask-block">
+      <div class="ab-label">PHASE 1 資金需求</div>
+      <div class="ab-value">NT$ 150 萬</div>
+      <div class="ab-desc">社群建立、導師網絡、3 場 Demo Day、課程工具包開發（18 個月）</div>
+    </div>
+    <div class="ask-block">
+      <div class="ab-label">我們能給早期支持者的</div>
+      <div class="ab-value">戰略優勢</div>
+      <div class="ab-desc">最早接觸台灣下一代 founder 的管道 · 企業 CSR 品牌價值 · Phase 3 基金優先 LP 投資權</div>
+    </div>
+    <div class="contact-block">
+      <div class="c-label">CONTACT</div>
+      <div class="c-info">
+        <strong>Chung-Ying (Joannie) Huang 黃鐘瑩</strong><br>
+        joanie0610@gmail.com<br>
+        Fulbright DAI Alumna · EdTech Researcher · Founder
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+
+  function updateCounter() {
+    const n = String(current + 1).padStart(2, '0');
+    const t = String(slides.length).padStart(2, '0');
+    document.getElementById('counter').textContent = `${n} / ${t}`;
+  }
+
+  function scrollSlide(dir) {
+    current = Math.max(0, Math.min(slides.length - 1, current + dir));
+    slides[current].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    updateCounter();
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') scrollSlide(1);
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') scrollSlide(-1);
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        current = Array.from(slides).indexOf(entry.target);
+        updateCounter();
+      }
+    });
+  }, { threshold: 0.5 });
+  slides.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
